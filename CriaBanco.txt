@@ -1,16 +1,17 @@
 Create database bancoDeDados;
 
+
+CREATE TABLE grupos (
+grupoID INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(20) NOT NULL,
+);
+
 CREATE TABLE pessoas (
 pessoaID INT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(30) NOT NULL,
 funcao VARCHAR(30) NOT NULL,
 grupoID int NOT NULL,
 FOREIGN KEY (grupoID) REFERENCES grupos(grupoID)
-);
-
-CREATE TABLE grupos (
-grupoID INT AUTO_INCREMENT PRIMARY KEY,
-nome VARCHAR(20) NOT NULL,
 );
 
 
