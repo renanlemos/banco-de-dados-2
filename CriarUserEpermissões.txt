@@ -1,0 +1,12 @@
+Create user administrador;
+
+Create user documentador;
+
+Create user testador;
+
+
+GRANT ALL PRIVILEGES ON agenda.* TO 'administrador'@'%';
+
+GRANT SELECT, insert ON agenda.* TO 'documentador'@'%';
+
+FLUSH PRIVILEGES;

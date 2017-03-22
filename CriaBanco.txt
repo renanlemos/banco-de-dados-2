@@ -1,0 +1,26 @@
+Create database agenda;
+
+CREATE TABLE cidade (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE contatos (
+id INT AUTO_INCREMENT PRIMARY KEY,
+
+nome VARCHAR(20) NOT NULL,
+
+sobrenome VARCHAR(30) NOT NULL,
+
+ddd INT(2),
+
+telefone VARCHAR(9) NOT NULL,
+
+data_nasc DATE,
+
+email VARCHAR(30),
+
+cidade_id int,
+
+FOREIGN KEY (id) REFERENCES cidade(id)
+);
