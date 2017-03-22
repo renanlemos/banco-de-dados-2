@@ -1,26 +1,32 @@
-Create database agenda;
+Create database bancoDeDados;
 
-CREATE TABLE cidade (
-id INT AUTO_INCREMENT PRIMARY KEY,
-nome VARCHAR(30) NOT NULL
+CREATE TABLE pessoas (
+pessoaID INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(30) NOT NULL,
+funcao VARCHAR(30) NOT NULL,
+grupoID int NOT NULL,
+FOREIGN KEY (grupoID) REFERENCES grupos(grupoID)
 );
 
-CREATE TABLE contatos (
-id INT AUTO_INCREMENT PRIMARY KEY,
-
+CREATE TABLE grupos (
+grupoID INT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(20) NOT NULL,
+);
 
-sobrenome VARCHAR(30) NOT NULL,
 
-ddd INT(2),
+CREATE TABLE encontros (
+encontroID INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(20) NOT NULL,
+data DATE NOT NULL,
+pessoaID int NOT NULL,
+FOREIGN KEY (pessoaID) REFERENCES pessoas(pessoaID),
+conteudo VARCHAR(200),
+);
 
-telefone VARCHAR(9) NOT NULL,
-
-data_nasc DATE,
-
-email VARCHAR(30),
-
-cidade_id int,
-
-FOREIGN KEY (id) REFERENCES cidade(id)
+CREATE TABLE documentos (
+documentosID INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(20) NOT NULL,
+descricao VARCHAR(200) NOT NULL,
+local VARCHAR(200) NOT NULL,
+nota int NOT NULL,
 );
