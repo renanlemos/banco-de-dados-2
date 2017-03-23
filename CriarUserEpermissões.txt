@@ -1,10 +1,10 @@
 use bancoDeDados;
 
-Create user administrador;
+CREATE USER 'administrador'@'%' IDENTIFIED BY '123456';
 
-Create user documentador;
+CREATE USER 'documentador'@'%' IDENTIFIED BY '123456';
 
-Create user testador;
+CREATE USER 'testador'@'%' IDENTIFIED BY '123456';
 
 
 GRANT ALL PRIVILEGES ON agenda.* TO 'administrador'@'%';
