@@ -1,10 +1,13 @@
 Create database bancoDeDados;
 
+use bancoDeDados;
+
 
 CREATE TABLE grupos (
 grupoID INT AUTO_INCREMENT PRIMARY KEY,
-nome VARCHAR(20) NOT NULL,
+nome VARCHAR(20) NOT NULL
 );
+
 
 CREATE TABLE pessoas (
 pessoaID INT AUTO_INCREMENT PRIMARY KEY,
@@ -21,7 +24,7 @@ nome VARCHAR(20) NOT NULL,
 data DATE NOT NULL,
 pessoaID int NOT NULL,
 FOREIGN KEY (pessoaID) REFERENCES pessoas(pessoaID),
-conteudo VARCHAR(200),
+conteudo VARCHAR(200)
 );
 
 CREATE TABLE documentos (
@@ -29,5 +32,5 @@ documentosID INT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(20) NOT NULL,
 descricao VARCHAR(200) NOT NULL,
 local VARCHAR(200) NOT NULL,
-nota int NOT NULL,
+nota int NOT NULL
 );
